@@ -1,6 +1,6 @@
 {
   "name": "crawler",
-  "version": "0.2.7",
+  "version": "0.4.1",
   "description": "Crawler is a web spider written with Nodejs. It gives you the full power of jQuery on the server to parse a big number of pages as they are downloaded, asynchronously. Scraping should be simple and fun!",
   "keywords": [
     "dom",
@@ -20,7 +20,7 @@
     },
     {
       "name": "Paul Valla",
-      "email": "paul.valla+nodecrawler@gmail.com",
+      "email": "bonjour@pol.ninja",
       "url": "http://www.pol.ninja/"
     }
   ],
@@ -38,30 +38,29 @@
     "url": "https://github.com/sylvinus/node-crawler.git"
   },
   "dependencies": {
-    "htmlparser": "^1.7.7",
-    "request": "^2.34.0",
-    "jsdom": "^0.10.5",
-    "generic-pool": "^2.0.4",
-    "underscore": "^1.6.0",
-    "jschardet": "^1.1.0",
-    "iconv-lite": "^0.4.0-pre3",
-    "qunit": "^0.6.3",
-    "iconv": "^2.1.0",
-    "compression": "^1.0.2"
+    "cheerio": "0.18.0",
+    "generic-pool": "2.1.1",
+    "iconv": "2.1.4",
+    "iconv-lite": "0.4.4",
+    "jschardet": "1.1.0",
+    "lodash": "2.4.1",
+    "request": "2.42.0"
   },
   "optionalDependencies": {
     "iconv": "*"
   },
   "devDependencies": {
-    "qunit": "^0.6.4",
-    "express": "^4.2.0",
-    "memwatch": "^0.2.2"
+    "chai": "1.9.2",
+    "mocha": "1.21.4",
+    "mocha-testdata": "1.1.0",
+    "sinon": "1.11.1",
+    "jsdom": "0.11.1"
   },
   "scripts": {
-    "test": "node test/testrunner.js"
+    "test": "./node_modules/mocha/bin/mocha --reporter spec --bail --timeout 10000 tests/*.js"
   },
   "engines": [
-    "node >=0.10.x"
+    "node >=0.8.x"
   ],
   "directories": {
     "lib": "lib"
