@@ -33,10 +33,10 @@ describe('Links', function() {
     });
     it('should resolved links to absolute urls after redirect with jsdom', function(done) {
         c.queue([{
-            uri : 'http://'+httpbinHost+'/redirect-to?url=http://example.com/',
+            uri : 'http://'+httpbinHost+'/redirect-to?url=http://'+httpbinHost+'/ip',
             callback: function(error, result) {
 
-                expect(result.uri).to.equal('http://example.com/');
+                expect(result.uri).to.equal('http://'+httpbinHost+'/ip');
                 expect(error).to.be.null;
                 done();
             }

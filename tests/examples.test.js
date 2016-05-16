@@ -22,7 +22,7 @@ describe('Simple test', function() {
                 expect(typeof result.body).to.equal('string');
             }
         });
-        c.queue('http://google.com');
+        c.queue('http://' + httpbinHost);
     });
     it('should run the readme examples', function(done) {
         c = new Crawler({
@@ -45,7 +45,7 @@ describe('Simple test', function() {
     it('should run the with an array queue', function(done) {
         c = new Crawler();
         c.queue([{
-            uri: 'http://www.google.com',
+            uri: 'http://' + httpbinHost,
             jquery: true,
             callback : function(error, result, $) //noinspection BadExpressionStatementJS,BadExpressionStatementJS
             {

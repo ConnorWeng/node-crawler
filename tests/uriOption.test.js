@@ -30,9 +30,9 @@ describe('Uri Options', function() {
             uri: uriFunction(statusCode)
         });
     });
-    it('should work if uri is a function, example from Readme', function(done) {
-        var googleSearch = function(search) {
-            return 'http://www.google.fr/search?q=' + search;
+    it('should work if uri is a function', function(done) {
+        var uriFunc = function(path) {
+            return 'http://' + httpbinHost + '/' + path;
         };
         c = new Crawler({
             maxConnections: 10,
@@ -45,7 +45,7 @@ describe('Uri Options', function() {
             }
         });
         c.queue({
-            uri: googleSearch('cheese')
+            uri: uriFunc('ip')
         });
     });
     it('should skip if the uri is undefined or an empty string', function(done) {
